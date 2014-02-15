@@ -23,7 +23,7 @@
                                     <action selector="Play:" destination="QMl-Sb-uRJ" eventType="touchUpInside" id="zIb-BQ-d1u"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" id="0za-Wr-PEV">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" id="0za-Wr-PEV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>

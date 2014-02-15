@@ -36,12 +36,20 @@
     alert.alertViewStyle = UIAlertViewStyleDefault;
     [alert show];
     
+    // ナビゲーションが埋もれるのをなおす
+    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    //iOS 7.0以上の場合
+    if(iOSVersion &gt;= 7.0) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
     // ナビゲーションバーの色
     self.navigationController.navigationBar.tintColor =
     [UIColor colorWithRed:191/255.0 green:255/255.0 blue:207/255.0 alpha:1];
     
     // ナビゲーションバーのタイトル
     self.navigationItem.title = @"SmartWalk";
+    
     
     //緯度経度
     lm = [[CLLocationManager alloc] init];
