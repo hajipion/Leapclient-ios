@@ -80,7 +80,7 @@ NSString* string;
     // 取得頻度（指定したメートル移動したら再取得する）
     lm.distanceFilter = 0.1;    // 1m移動するごとに取得
     //位置検出開始
-    [lm startUpdatingLocation];
+    //[lm startUpdatingLocation];
     
     //ラベルを変えるためのカウント初期化！
     changeLabelCount = 0;
@@ -157,7 +157,7 @@ NSString* string;
     
     audio =[[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
     audio.volume=0.4;
-    audio.numberOfLoops=5;
+    audio.numberOfLoops=1;
     [audio prepareToPlay];
     [audio play];
 
@@ -182,14 +182,7 @@ NSString* string;
     if(i&(left!=0)){
         NSLog(@"LEFT");
         
-        NSString *path=[[NSBundle mainBundle]pathForResource:@"hidari" ofType:@"mp4"];
-        NSURL *url =[NSURL fileURLWithPath:path];
         
-        audio =[[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        audio.volume=0.4;
-        audio.numberOfLoops=1;
-        [audio prepareToPlay];
-        [audio play];
     }
     
     if(i&(right!=0)){
@@ -232,19 +225,9 @@ NSString* string;
     CLLocationCoordinate2D coordinate;
     coordinate.latitude = newLocation.coordinate.latitude;
     coordinate.longitude = newLocation.coordinate.longitude;
-    
-    
-    
-    
-    
- NSLog(@"位置取得%lf",coordinate.longitude);
-    
-    
-    
-    
-    
-    
-    
+
+    NSLog(@"位置取得%lf",coordinate.longitude);
+
     // 空のリストを生成する
     NSURL   *url = [NSURL URLWithString:@"http://192.168.151.134:9292/location"];
     
@@ -265,6 +248,17 @@ NSString* string;
     NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
     
+    
+    NSString *path=[[NSBundle mainBundle]pathForResource:@"migi" ofType:@"mp4"];
+    NSURL *url2 =[NSURL fileURLWithPath:path];
+    
+    audio =[[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
+    audio.volume=0.4;
+    audio.numberOfLoops=1;
+    [audio prepareToPlay];
+    [audio play];
+
+    
     }
 
 // 現在地取得に失敗したら
@@ -283,22 +277,14 @@ NSString* string;
 {
     NSLog(@"start_scoket");
     
-    
-    
-    
-    
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.151.134:8080/"] ] ;
     [request addValue:string forHTTPHeaderField:@"X-TOKEN"];
     
                              
     //websocketを開く
     SRWebSocket *web_socket = [[SRWebSocket alloc] initWithURLRequest:request];
-    
     [web_socket setDelegate:self];
     [web_socket open];
-    
-    
-    
     
 
 }
