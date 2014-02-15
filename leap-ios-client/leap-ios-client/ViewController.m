@@ -92,7 +92,7 @@ NSString* string;
         imagesArray[i] = source;
     }
     self.smartWalker.animationImages = [NSArray arrayWithObjects:imagesArray count:18];
-    self.smartWalker.animationDuration = 0.5;
+    self.smartWalker.animationDuration = 1.3;
     self.smartWalker.animationRepeatCount = 0;
     [self.smartWalker startAnimating];
     
@@ -101,8 +101,8 @@ NSString* string;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // 1秒ごとに更新処理を呼ぶ
-    [[NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(changeLabel) userInfo:nil repeats:YES] fire];
+    // 0.5秒ごとに更新処理を呼ぶ
+    [[NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(changeLabel) userInfo:nil repeats:YES] fire];
 }
 
 - (void)changeLabel
