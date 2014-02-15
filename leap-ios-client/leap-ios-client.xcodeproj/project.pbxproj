@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		94891748C97442E2839E0E51 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0483B81DEED424CA2DB8705 /* libPods.a */; };
 		EF68959618AF9DEB00B5A2FE /* o-magne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF68959518AF9DEB00B5A2FE /* o-magne.mp3 */; };
+		EF68959818AF9F6400B5A2FE /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EF68959718AF9F6400B5A2FE /* background.png */; };
+		EF68959918AF9F6400B5A2FE /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EF68959718AF9F6400B5A2FE /* background.png */; };
 		F615B74318AF6A6B00F80131 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74218AF6A6B00F80131 /* Foundation.framework */; };
 		F615B74518AF6A6B00F80131 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74418AF6A6B00F80131 /* CoreGraphics.framework */; };
 		F615B74718AF6A6B00F80131 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74618AF6A6B00F80131 /* UIKit.framework */; };
@@ -42,6 +44,7 @@
 		474C30DDBF0443D4BF7515DC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B0483B81DEED424CA2DB8705 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF68959518AF9DEB00B5A2FE /* o-magne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "o-magne.mp3"; sourceTree = "<group>"; };
+		EF68959718AF9F6400B5A2FE /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		F615B73F18AF6A6B00F80131 /* leap-ios-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "leap-ios-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F615B74218AF6A6B00F80131 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F615B74418AF6A6B00F80131 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -154,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				EF68959518AF9DEB00B5A2FE /* o-magne.mp3 */,
+				EF68959718AF9F6400B5A2FE /* background.png */,
 				F615B76D18AF6A6B00F80131 /* leap_ios_clientTests.m */,
 				F615B76818AF6A6B00F80131 /* Supporting Files */,
 			);
@@ -248,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F615B75B18AF6A6B00F80131 /* Images.xcassets in Resources */,
+				EF68959818AF9F6400B5A2FE /* background.png in Resources */,
 				F615B74D18AF6A6B00F80131 /* InfoPlist.strings in Resources */,
 				F615B77818AF6ACC00F80131 /* Podfile in Resources */,
 				F615B75618AF6A6B00F80131 /* Main.storyboard in Resources */,
@@ -259,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6C1F2C618AF833E0018212D /* Images.xcassets in Resources */,
+				EF68959918AF9F6400B5A2FE /* background.png in Resources */,
 				EF68959618AF9DEB00B5A2FE /* o-magne.mp3 in Resources */,
 				F615B76C18AF6A6B00F80131 /* InfoPlist.strings in Resources */,
 			);
