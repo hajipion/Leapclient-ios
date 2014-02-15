@@ -58,20 +58,21 @@
     
     // ▼アニメーション▼
     /* 予備…
-    NSArray *imageArray = [NSArray arrayWithObjects:
+    NSArray *imagesArray = [NSArray arrayWithObjects:
                            [UIImage imageNamed:@"sw1.png"],
                            [UIImage imageNamed:@"sw2.png"],
                            [UIImage imageNamed:@"sw3.png"],
                            [UIImage imageNamed:@"sw4.png"],
                            nil];
-    NSMutableArray *imagesArray = [NSMutableArray arrayWithObjects:nil];
     */
+    NSMutableArray *imagesArray = [NSMutableArray arrayWithObjects:nil];
+    
     // 配列に要素を挿入する
     for (int i = 1; i < 19; i++) {
         NSString *source = [NSString stringWithFormat:@"sw%i.png",i];
         [imagesArray insertObject:source atIndex:i];
     }
-    self.smartWalker.animationImages = imageArray;
+    self.smartWalker.animationImages = imagesArray;
     self.smartWalker.animationDuration = 0.5;
     self.smartWalker.animationRepeatCount = 0;
     [self.smartWalker startAnimating];
