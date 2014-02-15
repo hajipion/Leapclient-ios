@@ -9,7 +9,12 @@
 #import "AppDelegate.h"
 #import "StringUtils.h"
 
-@implementation AppDelegate
+#import <AudioToolbox/AudioToolbox.h>
+
+@implementation AppDelegate{
+    
+    @public AVAudioPlayer *audio;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -76,71 +81,91 @@
 // デバイストークン発行成功
 - (void)application:(UIApplication*)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)devToken{
    
-    NSLog(@"deviceToken: %@", devToken);
-    NSString *dat = [NSString stringWithFormat:@"%@", devToken];
-    dat = [StringUtils replace:dat searchString:@" " replacement:@""];
-    dat = [StringUtils replace:dat searchString:@"<" replacement:@""];
-    dat = [StringUtils replace:dat searchString:@">" replacement:@""];
     
-    NSLog(@"deviceToken: %@", dat);
+  
+    //NSUserDefaultsにすでにあるか
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    NSUserDefaults *defaults2 = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dic2 = [defaults2 persistentDomainForName:appDomain];
     
-    NSArray *array = @[dat];
-    /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:array forKey:@"devicetoken"];*/
-   
+    //
     
-   
-    NSString* url = @"http://192.168.151.134:9292/token";
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-    NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    // NSData *jsonData = [message dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error=nil;
-    
-    //NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:json_data options:NSJSONReadingAllowFragments error:&error];
-    NSMutableDictionary *dic = [NSJSONSerialization JSONObjectWithData:json_data
-                                                               options:NSJSONReadingAllowFragments error:&error];
-    if (error != nil) {
-        NSLog(@"failed to parse Json ");
+    if(dic2!=nil){
+        NSLog(@"defualts_aru:%@", dic2);
+    }else{
+        NSLog(@"nai");
+        NSLog(@"deviceToken: %@", devToken);
+        NSString *dat = [NSString stringWithFormat:@"%@", devToken];
+        dat = [StringUtils replace:dat searchString:@" " replacement:@""];
+        dat = [StringUtils replace:dat searchString:@"<" replacement:@""];
+        dat = [StringUtils replace:dat searchString:@">" replacement:@""];
         
-    }
-    //NSLog(@"json_relativePosition = %@", dic[@"token"]);
-    NSString *str = dic[@"token"];
-    
-    NSLog(@"json_relativePosition = %@", str);
-    
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    
-    BOOL successful = [defaults synchronize];
-    if (successful) {
-        NSLog(@"%@", @"データの保存に成功しました。");
+        NSLog(@"deviceToken: %@", dat);
         
-        //2回目のリクエスト
-        // 空のリストを生成する
-        NSURL   *url = [NSURL URLWithString:@"http://192.168.151.134:9292/register"];
-        
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        [request setHTTPMethod:@"POST"];
+        NSArray *array = @[dat];
+        /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+         [defaults setObject:array forKey:@"devicetoken"];*/
         
         
-        NSDictionary *second_req = @{
-                                 @"token" :str,
-                                 @"device_token" :dat,
-                                 //@"longitude" : @1, // NSNumberで格納される
-                                 };
         
-        NSError *error = nil;
-        NSData  *content = [NSJSONSerialization dataWithJSONObject:second_req options:NSJSONWritingPrettyPrinted error:&error];
-        [request setHTTPBody:content];
+        NSString* url = @"http://192.168.151.134:9292/token";
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        // NSData *jsonData = [message dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error=nil;
+        
+        //NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:json_data options:NSJSONReadingAllowFragments error:&error];
+        NSMutableDictionary *dic = [NSJSONSerialization JSONObjectWithData:json_data
+                                                                   options:NSJSONReadingAllowFragments error:&error];
+        if (error != nil) {
+            NSLog(@"failed to parse Json ");
+            
+        }
+        //NSLog(@"json_relativePosition = %@", dic[@"token"]);
+        NSString *str = dic[@"token"];
+        
+        NSLog(@"json_relativePosition = %@", str);
+        
+        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+        // NSStringの保存
+        [defaults setObject:str forKey:@"token"];
+        BOOL successful = [defaults synchronize];
+        if (successful) {
+            NSLog(@"%@", @"データの保存に成功しました。");
+            
+            //2回目のリクエスト
+            // 空のリストを生成する
+            NSURL   *url = [NSURL URLWithString:@"http://192.168.151.134:9292/register"];
+            
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            [request setHTTPMethod:@"POST"];
+            
+            
+            NSDictionary *second_req = @{
+                                         @"token" :str,
+                                         @"device_token" :dat,
+                                         //@"longitude" : @1, // NSNumberで格納される
+                                         };
+            
+            NSError *error = nil;
+            NSData  *content = [NSJSONSerialization dataWithJSONObject:second_req options:NSJSONWritingPrettyPrinted error:&error];
+            [request setHTTPBody:content];
+            NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+            
+            
+        }
+        
+        
+       
+
         
         
     }
-
     
-    // NSStringの保存
-    [defaults setObject:str forKey:@"token"];
-
+    
+    
+   
     // デバイストークンをサーバに送信し、登録する
 }
 
@@ -165,6 +190,16 @@
         NSLog(@"PUSH_COME");
     }
     
+    
+    NSString *path=[[NSBundle mainBundle]pathForResource:@"migi" ofType:@"mp4"];
+    NSURL *url2 =[NSURL fileURLWithPath:path];
+    
+    audio =[[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
+    audio.volume=1.0;
+    audio.numberOfLoops=1;
+    [audio prepareToPlay];
+    [audio play];
+
     
     NSLog(@"remote notification: %@",[userInfo description]);
     NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];

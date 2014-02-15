@@ -68,9 +68,7 @@ int flag=0;
                                                    delegate:self
                                           cancelButtonTitle:nil
                                           otherButtonTitles:@"閉じる", nil];
-    alert.delegate       = self;
-    alert.alertViewStyle = UIAlertViewStyleDefault;
-    [alert show];
+
     
     //緯度経度
     lm = [[CLLocationManager alloc] init];
@@ -79,8 +77,9 @@ int flag=0;
     lm.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     // 取得頻度（指定したメートル移動したら再取得する）
     lm.distanceFilter = 0.1;    // 1m移動するごとに取得
-    //位置検出開始
-    //[lm startUpdatingLocation];
+   
+    
+
     
     //ラベルを変えるためのカウント初期化！
     changeLabelCount = 0;
@@ -95,6 +94,12 @@ int flag=0;
     self.smartWalker.animationDuration = 1.3;
     self.smartWalker.animationRepeatCount = 0;
     [self.smartWalker startAnimating];
+    
+    
+    alert.delegate       = self;
+    alert.alertViewStyle = UIAlertViewStyleDefault;
+    [alert show];
+
     
 }
 
@@ -126,7 +131,6 @@ int flag=0;
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket{
     
   
-    //[webSocket send:@"{192.168.151.134}"];
 }
 
 //websocketの受信
@@ -230,40 +234,40 @@ int flag=0;
 
     NSLog(@"位置取得%lf",coordinate.longitude);
     
-    
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    NSUserDefaults *defaults2 = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dic2 = [defaults2 persistentDomainForName:appDomain];
 
-    // 空のリストを生成する
-    NSURL   *url = [NSURL URLWithString:@"http://192.168.151.134:9292/location"];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPMethod:@"POST"];
-    
-    
-    NSDictionary *person = @{
-                             @"token" :string,
-                             @"latitude" :[[NSNumber alloc] initWithDouble:coordinate.latitude],
-                             @"longitude" :[[NSNumber alloc] initWithDouble:coordinate.longitude],
-                            };
-    
-    NSError *error = nil;
-    NSData  *content = [NSJSONSerialization dataWithJSONObject:person options:NSJSONWritingPrettyPrinted error:&error];
-    [request setHTTPBody:content];
-    NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
-    
-    
-    NSString *path=[[NSBundle mainBundle]pathForResource:@"migi" ofType:@"mp4"];
-    NSURL *url2 =[NSURL fileURLWithPath:path];
-    
-    audio =[[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
-    audio.volume=0.4;
-    audio.numberOfLoops=1;
-    [audio prepareToPlay];
-    [audio play];
-
-    
+    if(dic2){
+        // 空のリストを生成する
+        NSURL   *url = [NSURL URLWithString:@"http://192.168.151.134:9292/location"];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPMethod:@"POST"];
+        
+        
+        NSDictionary *person = @{
+                                 @"token" :string,
+                                 @"latitude" :[[NSNumber alloc] initWithDouble:coordinate.latitude],
+                                 @"longitude" :[[NSNumber alloc] initWithDouble:coordinate.longitude],
+                                 };
+        
+        NSError *error = nil;
+        NSData  *content = [NSJSONSerialization dataWithJSONObject:person options:NSJSONWritingPrettyPrinted error:&error];
+        [request setHTTPBody:content];
+        NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        
+        
+        
+        NSString *path=[[NSBundle mainBundle]pathForResource:@"migi" ofType:@"mp4"];
+        NSURL *url2 =[NSURL fileURLWithPath:path];
+        
+     
+        
     }
+    
+}
 
 // 現在地取得に失敗したら
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -280,8 +284,9 @@ int flag=0;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(flag==0){
-        NSLog(@"start_scoket");
-        
+               NSLog(@"start_scoket");
+        //位置検出開始
+        [lm startUpdatingLocation];
         NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.151.134:8080/"] ] ;
         [request addValue:string forHTTPHeaderField:@"X-TOKEN"];
         //websocketを開く
@@ -294,11 +299,6 @@ int flag=0;
         exit(1);
     }
    
-    
-    
-                             
-   
-    
     
     
 
