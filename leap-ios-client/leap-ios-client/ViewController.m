@@ -35,7 +35,13 @@
     alert.delegate       = self;
     alert.alertViewStyle = UIAlertViewStyleDefault;
     [alert show];
-
+    
+    // ナビゲーションバーの色
+    self.navigationController.navigationBar.tintColor =
+    [UIColor colorWithRed:191/255.0 green:255/255.0 blue:207/255.0 alpha:1];
+    
+    // ナビゲーションバーのタイトル
+    self.navigationItem.title = @"SmartWalk";
     
     //緯度経度
     lm = [[CLLocationManager alloc] init];
@@ -50,8 +56,37 @@
    
     
     
+    // ▼アニメーション▼
+    NSArray *imageArray = [NSArray arrayWithObjects:
+                           [UIImage imageNamed:@"sw1.png"],
+                           [UIImage imageNamed:@"sw2.png"],
+                           [UIImage imageNamed:@"sw3.png"],
+                           [UIImage imageNamed:@"sw4.png"],
+                           nil];
+    self.smartWalker.animationImages = imageArray;
+    self.smartWalker.animationDuration = 0.1;
+    self.smartWalker.animationRepeatCount = 0;
+    [self.smartWalker startAnimating];
     
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // 1秒ごとに更新処理を呼ぶ
+    [[NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(changeLabel) userInfo:nil repeats:YES] fire];
+}
+
+- (void)changeLabel
+{
+    int x;
+    x++;
+    if (x % 2 == 1) {
+        self.statusLabel.text = @"歩きスマホ中…";
+    } else {
+        self.statusLabel.text = @"歩きスマホ中　";
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -127,6 +162,7 @@
     
     
 }
+
 
 
 - (IBAction)Play:(id)sender {
