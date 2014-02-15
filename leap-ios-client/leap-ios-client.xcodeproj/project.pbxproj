@@ -77,7 +77,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		474C30DDBF0443D4BF7515DC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B0483B81DEED424CA2DB8705 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF68959518AF9DEB00B5A2FE /* o-magne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "o-magne.mp3"; sourceTree = "<group>"; };
 		EF68959718AF9F6400B5A2FE /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -181,7 +180,6 @@
 				F615B76718AF6A6B00F80131 /* leap-ios-clientTests */,
 				F615B74118AF6A6B00F80131 /* Frameworks */,
 				F615B74018AF6A6B00F80131 /* Products */,
-				474C30DDBF0443D4BF7515DC /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -556,7 +554,6 @@
 		};
 		F615B77218AF6A6B00F80131 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 474C30DDBF0443D4BF7515DC /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -573,7 +570,6 @@
 		};
 		F615B77318AF6A6B00F80131 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 474C30DDBF0443D4BF7515DC /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
