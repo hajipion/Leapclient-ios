@@ -37,6 +37,8 @@
     self.navigationController.navigationBar.tintColor =
     [UIColor colorWithRed:191/255.0 green:255/255.0 blue:207/255.0 alpha:1];
     
+    // ナビゲーションバーのタイトル
+    self.navigationItem.title = @"SmartWalk";
     
     
 }
