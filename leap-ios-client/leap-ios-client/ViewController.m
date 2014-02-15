@@ -81,14 +81,16 @@ NSString* string;
                            [UIImage imageNamed:@"sw4.png"],
                            nil];
     */
-    NSMutableArray *imagesArray = [NSMutableArray arrayWithObjects:nil];
+    //NSMutableArray *imagesArray = [NSMutableArray arrayWithObjects:nil];
+    UIImage* imagesArray[18];
     
     // 配列に要素を挿入する
-    for (int i = 1; i < 19; i++) {
-        NSString *source = [NSString stringWithFormat:@"sw%i.png",i];
-        [imagesArray insertObject:source atIndex:i];
+    for (int i = 0; i < 18; i++) {
+        UIImage *source = [UIImage imageNamed:[NSString stringWithFormat:@"sw%d.png",i+1] ];
+        imagesArray[i] = source;
+        //[imagesArray insertObject:source atIndex:i];
     }
-    self.smartWalker.animationImages = imagesArray;
+    self.smartWalker.animationImages = [NSArray arrayWithObjects:imagesArray count:18];
     self.smartWalker.animationDuration = 0.5;
     self.smartWalker.animationRepeatCount = 0;
     [self.smartWalker startAnimating];
