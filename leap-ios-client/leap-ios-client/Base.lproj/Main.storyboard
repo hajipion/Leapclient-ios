@@ -45,6 +45,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="66r-jQ-x3m">
+                                <rect key="frame" x="108" y="455" width="102" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="やめる" backgroundImage="stop.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -59,6 +67,7 @@
     </scenes>
     <resources>
         <image name="background.png" width="640" height="1046"/>
+        <image name="stop.png" width="193" height="66"/>
         <image name="sw1.png" width="300" height="350"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
