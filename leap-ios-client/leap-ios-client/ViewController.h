@@ -19,7 +19,10 @@
     SRWebSocket *socket;
     IBOutlet UITextField *hostTextField;
     CLLocationManager *lm;
+    int changeLabelCount;
+    
 }
+
 @property (nonatomic, retain) AVPlayer *avPlayer;
 - (IBAction)Play:(id)sender;
 

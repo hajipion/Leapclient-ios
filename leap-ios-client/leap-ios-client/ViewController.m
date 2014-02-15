@@ -43,12 +43,21 @@ NSString* string;
     alert.alertViewStyle = UIAlertViewStyleDefault;
     [alert show];
     
+    // ナビゲーションが埋もれるのをなおす
+    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    //iOS 7.0以上の場合
+    if(iOSVersion <= 7.0) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    // ナビゲーションの高さ
+    
     // ナビゲーションバーの色
     self.navigationController.navigationBar.tintColor =
     [UIColor colorWithRed:191/255.0 green:255/255.0 blue:207/255.0 alpha:1];
     
     // ナビゲーションバーのタイトル
     self.navigationItem.title = @"SmartWalk";
+    
     
     //緯度経度
     lm = [[CLLocationManager alloc] init];
@@ -60,18 +69,27 @@ NSString* string;
     //位置検出開始
     [lm startUpdatingLocation];
     
-   
-    
+    //ラベルを変えるためのカウント初期化！
+    changeLabelCount = 0;
     
     // ▼アニメーション▼
-    NSArray *imageArray = [NSArray arrayWithObjects:
+    /* 予備…
+    NSArray *imagesArray = [NSArray arrayWithObjects:
                            [UIImage imageNamed:@"sw1.png"],
                            [UIImage imageNamed:@"sw2.png"],
                            [UIImage imageNamed:@"sw3.png"],
                            [UIImage imageNamed:@"sw4.png"],
                            nil];
-    self.smartWalker.animationImages = imageArray;
-    self.smartWalker.animationDuration = 0.1;
+    */
+    NSMutableArray *imagesArray = [NSMutableArray arrayWithObjects:nil];
+    
+    // 配列に要素を挿入する
+    for (int i = 1; i < 19; i++) {
+        NSString *source = [NSString stringWithFormat:@"sw%i.png",i];
+        [imagesArray insertObject:source atIndex:i];
+    }
+    self.smartWalker.animationImages = imagesArray;
+    self.smartWalker.animationDuration = 0.5;
     self.smartWalker.animationRepeatCount = 0;
     [self.smartWalker startAnimating];
     
@@ -85,9 +103,8 @@ NSString* string;
 
 - (void)changeLabel
 {
-    int x;
-    x++;
-    if (x % 2 == 1) {
+    changeLabelCount = changeLabelCount + 1;
+    if (changeLabelCount % 2 == 1) {
         self.statusLabel.text = @"歩きスマホ中…";
     } else {
         self.statusLabel.text = @"歩きスマホ中　";
