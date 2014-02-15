@@ -32,7 +32,10 @@
     alert.delegate       = self;
     alert.alertViewStyle = UIAlertViewStyleDefault;
     [alert show];
-
+    
+    // ナビゲーションバーの色
+    self.navigationController.navigationBar.tintColor =
+    [UIColor colorWithRed:191/255.0 green:255/255.0 blue:207/255.0 alpha:1];
     
     
     
