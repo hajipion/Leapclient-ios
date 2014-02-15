@@ -53,8 +53,8 @@
     //位置検出開始
     [lm startUpdatingLocation];
     
-   
-    
+    //ラベルを変えるためのカウント初期化！
+    changeLabelCount = 0;
     
     // ▼アニメーション▼
     /* 予備…
@@ -87,9 +87,8 @@
 
 - (void)changeLabel
 {
-    int x;
-    x++;
-    if (x % 2 == 1) {
+    changeLabelCount = changeLabelCount + 1;
+    if (changeLabelCount % 2 == 1) {
         self.statusLabel.text = @"歩きスマホ中…";
     } else {
         self.statusLabel.text = @"歩きスマホ中　";
