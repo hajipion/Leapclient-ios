@@ -64,7 +64,7 @@ NSString* string;
     NSLog(@"token = %@", string);
 
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"完了"
-                                                    message:@"SmartWalkを起動しました。歩きスマホをご堪能ください！"
+                                                    message:@"SmartWalkを起動しました。\n歩きスマホをご堪能ください！"
                                                    delegate:self
                                           cancelButtonTitle:nil
                                           otherButtonTitles:@"閉じる", nil];
@@ -203,7 +203,19 @@ NSString* string;
 
 - (IBAction)Play:(id)sender {
     
- 
+    
+}
+
+- (IBAction)tapStop:(id)sender {
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"終了"
+                                                    message:@"危ないので歩きスマホは\nできるだけやめましょう。"
+                                                   delegate:self
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"アプリを閉じる", nil];
+    alert.delegate       = self;
+    alert.alertViewStyle = UIAlertViewStyleDefault;
+    [alert show];
+
 }
 
 
@@ -290,4 +302,5 @@ NSString* string;
     
 
 }
+
 @end

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="vIE-BZ-4gD">
-                                <rect key="frame" x="1" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="1" y="0.0" width="320" height="573"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sw1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wgr-Pi-er0">
@@ -39,6 +39,9 @@
                                 <state key="normal" title="やめる" backgroundImage="stop.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapStop:" destination="QMl-Sb-uRJ" eventType="touchUpInside" id="jOG-6Z-T7G"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>

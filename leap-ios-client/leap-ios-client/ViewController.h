@@ -30,4 +30,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
+- (IBAction)tapStop:(id)sender;
+
 @end
