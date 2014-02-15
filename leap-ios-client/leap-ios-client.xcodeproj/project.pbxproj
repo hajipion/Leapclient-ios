@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		94891748C97442E2839E0E51 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0483B81DEED424CA2DB8705 /* libPods.a */; };
+		EF68959618AF9DEB00B5A2FE /* o-magne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF68959518AF9DEB00B5A2FE /* o-magne.mp3 */; };
 		F615B74318AF6A6B00F80131 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74218AF6A6B00F80131 /* Foundation.framework */; };
 		F615B74518AF6A6B00F80131 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74418AF6A6B00F80131 /* CoreGraphics.framework */; };
 		F615B74718AF6A6B00F80131 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74618AF6A6B00F80131 /* UIKit.framework */; };
@@ -24,8 +25,6 @@
 		F615B76E18AF6A6B00F80131 /* leap_ios_clientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F615B76D18AF6A6B00F80131 /* leap_ios_clientTests.m */; };
 		F615B77818AF6ACC00F80131 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F615B77718AF6ACC00F80131 /* Podfile */; };
 		F6C1F2B318AF6D840018212D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C1F2B218AF6D840018212D /* AVFoundation.framework */; };
-		F6C1F2B518AF6DB40018212D /* o-magne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2B418AF6DB40018212D /* o-magne.mp3 */; };
-		F6C1F2B618AF6DB40018212D /* o-magne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2B418AF6DB40018212D /* o-magne.mp3 */; };
 		F6C1F2C618AF833E0018212D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F615B75A18AF6A6B00F80131 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +41,7 @@
 /* Begin PBXFileReference section */
 		474C30DDBF0443D4BF7515DC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B0483B81DEED424CA2DB8705 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF68959518AF9DEB00B5A2FE /* o-magne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "o-magne.mp3"; sourceTree = "<group>"; };
 		F615B73F18AF6A6B00F80131 /* leap-ios-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "leap-ios-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F615B74218AF6A6B00F80131 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F615B74418AF6A6B00F80131 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,7 +63,6 @@
 		F615B76D18AF6A6B00F80131 /* leap_ios_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = leap_ios_clientTests.m; sourceTree = "<group>"; };
 		F615B77718AF6ACC00F80131 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F6C1F2B218AF6D840018212D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		F6C1F2B418AF6DB40018212D /* o-magne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "o-magne.mp3"; path = "../../../../objc-av-audio-player-master/AVAudioPlayerSample/AVAudioPlayerSample/Resources/audio/o-magne.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +153,7 @@
 		F615B76718AF6A6B00F80131 /* leap-ios-clientTests */ = {
 			isa = PBXGroup;
 			children = (
-				F6C1F2B418AF6DB40018212D /* o-magne.mp3 */,
+				EF68959518AF9DEB00B5A2FE /* o-magne.mp3 */,
 				F615B76D18AF6A6B00F80131 /* leap_ios_clientTests.m */,
 				F615B76818AF6A6B00F80131 /* Supporting Files */,
 			);
@@ -252,7 +251,6 @@
 				F615B74D18AF6A6B00F80131 /* InfoPlist.strings in Resources */,
 				F615B77818AF6ACC00F80131 /* Podfile in Resources */,
 				F615B75618AF6A6B00F80131 /* Main.storyboard in Resources */,
-				F6C1F2B518AF6DB40018212D /* o-magne.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +259,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6C1F2C618AF833E0018212D /* Images.xcassets in Resources */,
+				EF68959618AF9DEB00B5A2FE /* o-magne.mp3 in Resources */,
 				F615B76C18AF6A6B00F80131 /* InfoPlist.strings in Resources */,
-				F6C1F2B618AF6DB40018212D /* o-magne.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
