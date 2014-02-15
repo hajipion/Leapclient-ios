@@ -39,7 +39,7 @@
     // ナビゲーションが埋もれるのをなおす
     float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     //iOS 7.0以上の場合
-    if(iOSVersion &gt;= 7.0) {
+    if(iOSVersion <= 7.0) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
