@@ -24,9 +24,14 @@
 		F615B76E18AF6A6B00F80131 /* leap_ios_clientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F615B76D18AF6A6B00F80131 /* leap_ios_clientTests.m */; };
 		F615B77818AF6ACC00F80131 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F615B77718AF6ACC00F80131 /* Podfile */; };
 		F6C1F2B318AF6D840018212D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C1F2B218AF6D840018212D /* AVFoundation.framework */; };
-		F6C1F2B518AF6DB40018212D /* o-magne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2B418AF6DB40018212D /* o-magne.mp3 */; };
-		F6C1F2B618AF6DB40018212D /* o-magne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2B418AF6DB40018212D /* o-magne.mp3 */; };
 		F6C1F2C618AF833E0018212D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F615B75A18AF6A6B00F80131 /* Images.xcassets */; };
+		F6C1F2C818AF991A0018212D /* hidari.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2C718AF991A0018212D /* hidari.mp4 */; };
+		F6C1F2C918AF991A0018212D /* hidari.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2C718AF991A0018212D /* hidari.mp4 */; };
+		F6C1F2CB18AF995C0018212D /* o-magne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2CA18AF995C0018212D /* o-magne.mp3 */; };
+		F6C1F2CC18AF995C0018212D /* o-magne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2CA18AF995C0018212D /* o-magne.mp3 */; };
+		F6C1F2CE18AF9B950018212D /* migi.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2CD18AF9B950018212D /* migi.mp4 */; };
+		F6C1F2CF18AF9B950018212D /* migi.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2CD18AF9B950018212D /* migi.mp4 */; };
+		F6C1F2D118AF9C9D0018212D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C1F2D018AF9C9D0018212D /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +68,10 @@
 		F615B76D18AF6A6B00F80131 /* leap_ios_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = leap_ios_clientTests.m; sourceTree = "<group>"; };
 		F615B77718AF6ACC00F80131 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F6C1F2B218AF6D840018212D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		F6C1F2B418AF6DB40018212D /* o-magne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "o-magne.mp3"; path = "../../../../objc-av-audio-player-master/AVAudioPlayerSample/AVAudioPlayerSample/Resources/audio/o-magne.mp3"; sourceTree = "<group>"; };
+		F6C1F2C718AF991A0018212D /* hidari.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = hidari.mp4; path = ../../../../../../Desktop/hidari.mp4; sourceTree = "<group>"; };
+		F6C1F2CA18AF995C0018212D /* o-magne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "o-magne.mp3"; sourceTree = SOURCE_ROOT; };
+		F6C1F2CD18AF9B950018212D /* migi.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = migi.mp4; path = ../../../../../../Desktop/migi.mp4; sourceTree = "<group>"; };
+		F6C1F2D018AF9C9D0018212D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C1F2D118AF9C9D0018212D /* CoreLocation.framework in Frameworks */,
 				F6C1F2B318AF6D840018212D /* AVFoundation.framework in Frameworks */,
 				F615B74518AF6A6B00F80131 /* CoreGraphics.framework in Frameworks */,
 				F615B74718AF6A6B00F80131 /* UIKit.framework in Frameworks */,
@@ -116,6 +125,7 @@
 		F615B74118AF6A6B00F80131 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6C1F2D018AF9C9D0018212D /* CoreLocation.framework */,
 				F6C1F2B218AF6D840018212D /* AVFoundation.framework */,
 				F615B74218AF6A6B00F80131 /* Foundation.framework */,
 				F615B74418AF6A6B00F80131 /* CoreGraphics.framework */,
@@ -143,6 +153,9 @@
 		F615B74918AF6A6B00F80131 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6C1F2CD18AF9B950018212D /* migi.mp4 */,
+				F6C1F2CA18AF995C0018212D /* o-magne.mp3 */,
+				F6C1F2C718AF991A0018212D /* hidari.mp4 */,
 				F615B74A18AF6A6B00F80131 /* leap-ios-client-Info.plist */,
 				F615B74B18AF6A6B00F80131 /* InfoPlist.strings */,
 				F615B74E18AF6A6B00F80131 /* main.m */,
@@ -154,7 +167,6 @@
 		F615B76718AF6A6B00F80131 /* leap-ios-clientTests */ = {
 			isa = PBXGroup;
 			children = (
-				F6C1F2B418AF6DB40018212D /* o-magne.mp3 */,
 				F615B76D18AF6A6B00F80131 /* leap_ios_clientTests.m */,
 				F615B76818AF6A6B00F80131 /* Supporting Files */,
 			);
@@ -248,11 +260,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C1F2CE18AF9B950018212D /* migi.mp4 in Resources */,
+				F6C1F2C818AF991A0018212D /* hidari.mp4 in Resources */,
 				F615B75B18AF6A6B00F80131 /* Images.xcassets in Resources */,
 				F615B74D18AF6A6B00F80131 /* InfoPlist.strings in Resources */,
 				F615B77818AF6ACC00F80131 /* Podfile in Resources */,
+				F6C1F2CB18AF995C0018212D /* o-magne.mp3 in Resources */,
 				F615B75618AF6A6B00F80131 /* Main.storyboard in Resources */,
-				F6C1F2B518AF6DB40018212D /* o-magne.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +276,9 @@
 			files = (
 				F6C1F2C618AF833E0018212D /* Images.xcassets in Resources */,
 				F615B76C18AF6A6B00F80131 /* InfoPlist.strings in Resources */,
-				F6C1F2B618AF6DB40018212D /* o-magne.mp3 in Resources */,
+				F6C1F2C918AF991A0018212D /* hidari.mp4 in Resources */,
+				F6C1F2CF18AF9B950018212D /* migi.mp4 in Resources */,
+				F6C1F2CC18AF995C0018212D /* o-magne.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
