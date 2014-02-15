@@ -10,10 +10,6 @@
 		94891748C97442E2839E0E51 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0483B81DEED424CA2DB8705 /* libPods.a */; };
 		EF1446D418AFC39A00BC2610 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = EF1446D318AFC39A00BC2610 /* stop.png */; };
 		EF1446D518AFC39A00BC2610 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = EF1446D318AFC39A00BC2610 /* stop.png */; };
-		EF1446D818AFC3C600BC2610 /* hidari.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EF1446D618AFC3C600BC2610 /* hidari.mp4 */; };
-		EF1446D918AFC3C600BC2610 /* hidari.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EF1446D618AFC3C600BC2610 /* hidari.mp4 */; };
-		EF1446DA18AFC3C600BC2610 /* migi.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EF1446D718AFC3C600BC2610 /* migi.mp4 */; };
-		EF1446DB18AFC3C600BC2610 /* migi.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EF1446D718AFC3C600BC2610 /* migi.mp4 */; };
 		F615B74318AF6A6B00F80131 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74218AF6A6B00F80131 /* Foundation.framework */; };
 		F615B74518AF6A6B00F80131 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74418AF6A6B00F80131 /* CoreGraphics.framework */; };
 		F615B74718AF6A6B00F80131 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74618AF6A6B00F80131 /* UIKit.framework */; };
@@ -38,6 +34,12 @@
 		F6C1F2D518AFB2FC0018212D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2D218AFB2FC0018212D /* background.png */; };
 		F6C1F2D618AFB2FC0018212D /* SmartWalker in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2D318AFB2FC0018212D /* SmartWalker */; };
 		F6C1F2D718AFB2FC0018212D /* SmartWalker in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2D318AFB2FC0018212D /* SmartWalker */; };
+		F6C1F31018AFEC8A0018212D /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F30F18AFEC8A0018212D /* StringUtils.m */; };
+		F6C1F31118AFEC8A0018212D /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F30F18AFEC8A0018212D /* StringUtils.m */; };
+		F6C1F31418AFF12C0018212D /* hidari.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F31218AFF12C0018212D /* hidari.mp4 */; };
+		F6C1F31518AFF12C0018212D /* hidari.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F31218AFF12C0018212D /* hidari.mp4 */; };
+		F6C1F31618AFF12C0018212D /* migi.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F31318AFF12C0018212D /* migi.mp4 */; };
+		F6C1F31718AFF12C0018212D /* migi.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F31318AFF12C0018212D /* migi.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +56,6 @@
 		474C30DDBF0443D4BF7515DC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B0483B81DEED424CA2DB8705 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1446D318AFC39A00BC2610 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
-		EF1446D618AFC3C600BC2610 /* hidari.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hidari.mp4; sourceTree = "<group>"; };
-		EF1446D718AFC3C600BC2610 /* migi.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = migi.mp4; sourceTree = "<group>"; };
 		F615B73F18AF6A6B00F80131 /* leap-ios-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "leap-ios-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F615B74218AF6A6B00F80131 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F615B74418AF6A6B00F80131 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +81,10 @@
 		F6C1F2D018AF9C9D0018212D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F6C1F2D218AFB2FC0018212D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		F6C1F2D318AFB2FC0018212D /* SmartWalker */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SmartWalker; sourceTree = "<group>"; };
+		F6C1F30E18AFEC8A0018212D /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtils.h; sourceTree = "<group>"; };
+		F6C1F30F18AFEC8A0018212D /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
+		F6C1F31218AFF12C0018212D /* hidari.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hidari.mp4; sourceTree = "<group>"; };
+		F6C1F31318AFF12C0018212D /* migi.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = migi.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 		F615B74818AF6A6B00F80131 /* leap-ios-client */ = {
 			isa = PBXGroup;
 			children = (
+				F6C1F30E18AFEC8A0018212D /* StringUtils.h */,
+				F6C1F30F18AFEC8A0018212D /* StringUtils.m */,
 				F615B75118AF6A6B00F80131 /* AppDelegate.h */,
 				F615B75218AF6A6B00F80131 /* AppDelegate.m */,
 				F615B75418AF6A6B00F80131 /* Main.storyboard */,
@@ -162,11 +168,11 @@
 		F615B74918AF6A6B00F80131 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6C1F31218AFF12C0018212D /* hidari.mp4 */,
+				F6C1F31318AFF12C0018212D /* migi.mp4 */,
 				F6C1F2D218AFB2FC0018212D /* background.png */,
 				F6C1F2D318AFB2FC0018212D /* SmartWalker */,
 				F6C1F2CA18AF995C0018212D /* o-magne.mp3 */,
-				EF1446D618AFC3C600BC2610 /* hidari.mp4 */,
-				EF1446D718AFC3C600BC2610 /* migi.mp4 */,
 				EF1446D318AFC39A00BC2610 /* stop.png */,
 				F615B74A18AF6A6B00F80131 /* leap-ios-client-Info.plist */,
 				F615B74B18AF6A6B00F80131 /* InfoPlist.strings */,
@@ -243,6 +249,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = mariin;
 				TargetAttributes = {
+					F615B73E18AF6A6B00F80131 = {
+						DevelopmentTeam = X887YBT2HA;
+					};
 					F615B75F18AF6A6B00F80131 = {
 						TestTargetID = F615B73E18AF6A6B00F80131;
 					};
@@ -275,8 +284,8 @@
 				EF1446D418AFC39A00BC2610 /* stop.png in Resources */,
 				F6C1F2D418AFB2FC0018212D /* background.png in Resources */,
 				F615B75B18AF6A6B00F80131 /* Images.xcassets in Resources */,
-				EF1446DA18AFC3C600BC2610 /* migi.mp4 in Resources */,
-				EF1446D818AFC3C600BC2610 /* hidari.mp4 in Resources */,
+				F6C1F31618AFF12C0018212D /* migi.mp4 in Resources */,
+				F6C1F31418AFF12C0018212D /* hidari.mp4 in Resources */,
 				F615B74D18AF6A6B00F80131 /* InfoPlist.strings in Resources */,
 				F615B77818AF6ACC00F80131 /* Podfile in Resources */,
 				F6C1F2CB18AF995C0018212D /* o-magne.mp3 in Resources */,
@@ -294,9 +303,9 @@
 				F6C1F2D518AFB2FC0018212D /* background.png in Resources */,
 				F615B76C18AF6A6B00F80131 /* InfoPlist.strings in Resources */,
 				F6C1F2CC18AF995C0018212D /* o-magne.mp3 in Resources */,
-				EF1446DB18AFC3C600BC2610 /* migi.mp4 in Resources */,
+				F6C1F31718AFF12C0018212D /* migi.mp4 in Resources */,
 				F6C1F2D718AFB2FC0018212D /* SmartWalker in Resources */,
-				EF1446D918AFC3C600BC2610 /* hidari.mp4 in Resources */,
+				F6C1F31518AFF12C0018212D /* hidari.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C1F31018AFEC8A0018212D /* StringUtils.m in Sources */,
 				F615B75918AF6A6B00F80131 /* ViewController.m in Sources */,
 				F615B75318AF6A6B00F80131 /* AppDelegate.m in Sources */,
 				F615B74F18AF6A6B00F80131 /* main.m in Sources */,
@@ -350,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C1F31118AFEC8A0018212D /* StringUtils.m in Sources */,
 				F615B76E18AF6A6B00F80131 /* leap_ios_clientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,8 +420,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shinzo yagi (R4MR2ZK29G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shinzo yagi (R4MR2ZK29G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 陽子 市岡 (88Q583VZ3Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 陽子 市岡 (88Q583VZ3Q)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -428,7 +439,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "022DDF4C-7A63-4994-93D1-A4C974954C17";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -450,8 +461,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shinzo yagi (R4MR2ZK29G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shinzo yagi (R4MR2ZK29G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 陽子 市岡 (88Q583VZ3Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 陽子 市岡 (88Q583VZ3Q)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -462,7 +473,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "022DDF4C-7A63-4994-93D1-A4C974954C17";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

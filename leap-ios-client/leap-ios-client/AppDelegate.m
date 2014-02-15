@@ -7,8 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "StringUtils.h"
 
 @implementation AppDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -17,36 +19,27 @@
     [session setCategory:AVAudioSessionCategoryPlayback error:nil];
     
     // PUSH通知を登録
-    [[UIApplication sharedApplication]
+    /*[[UIApplication sharedApplication]
      registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge|
       UIRemoteNotificationTypeSound|
-      UIRemoteNotificationTypeAlert)];
+      UIRemoteNotificationTypeAlert)];*/
     
+    [application unregisterForRemoteNotifications];
+    [application registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeBadge|
+     UIRemoteNotificationTypeAlert|
+     UIRemoteNotificationTypeSound|
+     UIRemoteNotificationTypeNewsstandContentAvailability];
     
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     
-    NSString* url = @"http://192.168.151.134:9292/token";
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-    NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-   // NSData *jsonData = [message dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error=nil;
-    
-    //NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:json_data options:NSJSONReadingAllowFragments error:&error];
-    NSMutableDictionary *dic = [NSJSONSerialization JSONObjectWithData:json_data
-                                                               options:NSJSONReadingAllowFragments error:&error];
-    if (error != nil) {
-        NSLog(@"failed to parse Json ");
-        
-    }
-    //NSLog(@"json_relativePosition = %@", dic[@"token"]);
-    NSString *str = dic[@"token"];
+    /*NSDictionary *userInfo
+    = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (userInfo != nil) {
+        NSLog(@"PUSH_COME__2");
 
-    NSLog(@"json_relativePosition = %@", str);
-
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    
-    // NSStringの保存
-    [defaults setObject:str forKey:@"token"];
+    }*/
 
     return YES;
 }
@@ -78,10 +71,76 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+
 // デバイストークン発行成功
 - (void)application:(UIApplication*)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)devToken{
+   
     NSLog(@"deviceToken: %@", devToken);
+    NSString *dat = [NSString stringWithFormat:@"%@", devToken];
+    dat = [StringUtils replace:dat searchString:@" " replacement:@""];
+    dat = [StringUtils replace:dat searchString:@"<" replacement:@""];
+    dat = [StringUtils replace:dat searchString:@">" replacement:@""];
     
+    NSLog(@"deviceToken: %@", dat);
+    
+    NSArray *array = @[dat];
+    /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:array forKey:@"devicetoken"];*/
+   
+    
+   
+    NSString* url = @"http://192.168.151.134:9292/token";
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    // NSData *jsonData = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error=nil;
+    
+    //NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:json_data options:NSJSONReadingAllowFragments error:&error];
+    NSMutableDictionary *dic = [NSJSONSerialization JSONObjectWithData:json_data
+                                                               options:NSJSONReadingAllowFragments error:&error];
+    if (error != nil) {
+        NSLog(@"failed to parse Json ");
+        
+    }
+    //NSLog(@"json_relativePosition = %@", dic[@"token"]);
+    NSString *str = dic[@"token"];
+    
+    NSLog(@"json_relativePosition = %@", str);
+    
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
+    BOOL successful = [defaults synchronize];
+    if (successful) {
+        NSLog(@"%@", @"データの保存に成功しました。");
+        
+        //2回目のリクエスト
+        // 空のリストを生成する
+        NSURL   *url = [NSURL URLWithString:@"http://192.168.151.134:9292/register"];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPMethod:@"POST"];
+        
+        
+        NSDictionary *second_req = @{
+                                 @"token" :str,
+                                 @"device_token" :dat,
+                                 //@"longitude" : @1, // NSNumberで格納される
+                                 };
+        
+        NSError *error = nil;
+        NSData  *content = [NSJSONSerialization dataWithJSONObject:second_req options:NSJSONWritingPrettyPrinted error:&error];
+        [request setHTTPBody:content];
+        NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        
+        
+    }
+
+    
+    // NSStringの保存
+    [defaults setObject:str forKey:@"token"];
+
     // デバイストークンをサーバに送信し、登録する
 }
 
@@ -89,6 +148,44 @@
 - (void)application:(UIApplication*)app didFailToRegisterForRemoteNotificationsWithError:(NSError*)err{
     NSLog(@"Errorinregistration.Error:%@",err);
 }
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSLog(@"PUSH_COME");
+
+    if (application.applicationState == UIApplicationStateActive)
+    {
+               // ここに処理
+        
+        NSLog(@"PUSH_COME");
+
+       
+    }else{
+        NSLog(@"PUSH_COME");
+    }
+    
+    
+    NSLog(@"remote notification: %@",[userInfo description]);
+    NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+    
+    NSString *alert = [apsInfo objectForKey:@"alert"];
+    NSLog(@"Received Push Alert: %@", alert);
+    
+    NSString *sound = [apsInfo objectForKey:@"sound"];
+    NSLog(@"Received Push Sound: %@", sound);
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    
+    NSString *badge = [apsInfo objectForKey:@"badge"];
+    NSLog(@"Received Push Badge: %@", badge);
+    application.applicationIconBadgeNumber = [[apsInfo objectForKey:@"badge"] integerValue];
+    
+    
+}
+
+
+
+
 
 
 @end

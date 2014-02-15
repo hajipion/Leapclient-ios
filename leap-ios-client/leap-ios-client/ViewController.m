@@ -22,7 +22,7 @@
 @implementation ViewController
 
 NSString* string;
-
+int flag=0;
 
 // iOSバージョン対策
 - (int)osMajorVersion
@@ -208,6 +208,8 @@ NSString* string;
     alert.delegate       = self;
     alert.alertViewStyle = UIAlertViewStyleDefault;
     [alert show];
+   
+    
 
 }
 
@@ -227,6 +229,8 @@ NSString* string;
     coordinate.longitude = newLocation.coordinate.longitude;
 
     NSLog(@"位置取得%lf",coordinate.longitude);
+    
+    
 
     // 空のリストを生成する
     NSURL   *url = [NSURL URLWithString:@"http://192.168.151.134:9292/location"];
@@ -238,8 +242,8 @@ NSString* string;
     
     NSDictionary *person = @{
                              @"token" :string,
-                             @"latitude" :@1,
-                             @"longitude" : @1, // NSNumberで格納される
+                             @"latitude" :[[NSNumber alloc] initWithDouble:coordinate.latitude],
+                             @"longitude" :[[NSNumber alloc] initWithDouble:coordinate.longitude],
                             };
     
     NSError *error = nil;
@@ -275,16 +279,27 @@ NSString* string;
  */
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"start_scoket");
+    if(flag==0){
+        NSLog(@"start_scoket");
+        
+        NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.151.134:8080/"] ] ;
+        [request addValue:string forHTTPHeaderField:@"X-TOKEN"];
+        //websocketを開く
+        SRWebSocket *web_socket = [[SRWebSocket alloc] initWithURLRequest:request];
+        [web_socket setDelegate:self];
+        [web_socket open];
+        flag=1;
+        
+    }else{
+        exit(1);
+    }
+   
     
-    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.151.134:8080/"] ] ;
-    [request addValue:string forHTTPHeaderField:@"X-TOKEN"];
     
                              
-    //websocketを開く
-    SRWebSocket *web_socket = [[SRWebSocket alloc] initWithURLRequest:request];
-    [web_socket setDelegate:self];
-    [web_socket open];
+   
+    
+    
     
 
 }
