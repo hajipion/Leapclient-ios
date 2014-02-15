@@ -22,6 +22,31 @@
      (UIRemoteNotificationTypeBadge|
       UIRemoteNotificationTypeSound|
       UIRemoteNotificationTypeAlert)];
+    
+    
+    
+    NSString* url = @"http://192.168.151.134:9292/token";
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+   // NSData *jsonData = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error=nil;
+    
+    //NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:json_data options:NSJSONReadingAllowFragments error:&error];
+    NSMutableDictionary *dic = [NSJSONSerialization JSONObjectWithData:json_data
+                                                               options:NSJSONReadingAllowFragments error:&error];
+    if (error != nil) {
+        NSLog(@"failed to parse Json ");
+        
+    }
+    //NSLog(@"json_relativePosition = %@", dic[@"token"]);
+    NSString *str = dic[@"token"];
+
+    NSLog(@"json_relativePosition = %@", str);
+
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
+    // NSStringの保存
+    [defaults setObject:str forKey:@"token"];
 
     return YES;
 }

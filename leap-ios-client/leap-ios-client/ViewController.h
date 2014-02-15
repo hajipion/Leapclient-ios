@@ -9,11 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "SRWebSocket.h"
-@interface ViewController : UIViewController <SRWebSocketDelegate> {
+#import <CoreLocation/CoreLocation.h>
+
+
+
+@interface ViewController : UIViewController <SRWebSocketDelegate,CLLocationManagerDelegate>{
 
     AVPlayer *avPlayer;
     SRWebSocket *socket;
     IBOutlet UITextField *hostTextField;
+    CLLocationManager *lm;
 }
 @property (nonatomic, retain) AVPlayer *avPlayer;
 - (IBAction)Play:(id)sender;
