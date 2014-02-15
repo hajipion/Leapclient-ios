@@ -42,6 +42,7 @@
     if(iOSVersion <= 7.0) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+    // ナビゲーションの高さ
     
     // ナビゲーションバーの色
     self.navigationController.navigationBar.tintColor =
