@@ -21,11 +21,18 @@
 
 @implementation ViewController
 
-
+NSString* string;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //userdefault
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    string = [defaults stringForKey:@"token"];
+    NSLog(@"token = %@", string);
+    //
+
 
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"完了"
                                                     message:@"SmartWalkを起動しました。歩きスマホをご堪能ください！"
@@ -49,7 +56,7 @@
     // 取得精度の指定
     lm.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     // 取得頻度（指定したメートル移動したら再取得する）
-    lm.distanceFilter = 1;    // 1m移動するごとに取得
+    lm.distanceFilter = 0.1;    // 1m移動するごとに取得
     //位置検出開始
     [lm startUpdatingLocation];
     
@@ -124,7 +131,15 @@
     
     [self myMethod:i];
 
+    NSString *path=[[NSBundle mainBundle]pathForResource:@"migi" ofType:@"mp4"];
+    NSURL *url2 =[NSURL fileURLWithPath:path];
     
+    audio =[[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
+    audio.volume=0.4;
+    audio.numberOfLoops=5;
+    [audio prepareToPlay];
+    [audio play];
+
     
     
     
@@ -186,11 +201,38 @@
     coordinate.longitude = newLocation.coordinate.longitude;
     
     
-    NSLog(@"位置取得%lf",coordinate.longitude);
     
-
-    // この緯度経度で何かやる・・・
-}
+    
+    
+ NSLog(@"位置取得%lf",coordinate.longitude);
+    
+    
+    
+    
+    
+    
+    
+    // 空のリストを生成する
+    NSURL   *url = [NSURL URLWithString:@"http://192.168.151.134:9292/location"];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"POST"];
+    
+    
+    NSDictionary *person = @{
+                             @"token" :string,
+                             @"latitude" :@1,
+                             @"longitude" : @1, // NSNumberで格納される
+                            };
+    
+    NSError *error = nil;
+    NSData  *content = [NSJSONSerialization dataWithJSONObject:person options:NSJSONWritingPrettyPrinted error:&error];
+    [request setHTTPBody:content];
+    NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    
+    }
 
 // 現在地取得に失敗したら
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -209,44 +251,19 @@
     NSLog(@"start_scoket");
     
     
-    //userdefault
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSString* string = [defaults stringForKey:@"token"];
-    NSLog(@"token = %@", string);
-    //
     
     
     
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.151.134:8080/"] ] ;
+    [request addValue:string forHTTPHeaderField:@"X-TOKEN"];
     
-   /* NSURL *url = [NSURL URLWithString:@"ws://192.168.151.134:8080/"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setValue:@"ws://192.168.151.134:8080/" forHTTPHeaderField:@"Referer"];
-    socket = [[SRWebSocket alloc] initWithURLRequest:[NSMutableURLRequest requestWithURL:request]];
-    socket.delegate = self;
-    [socket open];*/
-    
-    NSURL *jsonURL =[NSURL URLWithString:@"ws://192.168.151.134:8080/"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:jsonURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
-    [request setValue:@"Basic ...." forHTTPHeaderField:@"Authorization"];
-    NSURLResponse *response;
-    NSError * error  = nil;
-    NSData *POSTReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    
-    
+                             
     //websocketを開く
-   SRWebSocket *web_socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.151.134:8080/"]]];
+    SRWebSocket *web_socket = [[SRWebSocket alloc] initWithURLRequest:request];
     
     [web_socket setDelegate:self];
     [web_socket open];
     
-    NSString *path=[[NSBundle mainBundle]pathForResource:@"migi" ofType:@"mp4"];
-    NSURL *url2 =[NSURL fileURLWithPath:path];
-    
-    audio =[[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
-    audio.volume=0.4;
-    audio.numberOfLoops=5;
-    [audio prepareToPlay];
-    [audio play];
     
     
     
