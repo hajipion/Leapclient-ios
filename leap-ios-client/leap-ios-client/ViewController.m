@@ -23,16 +23,45 @@
 
 NSString* string;
 
+
+// iOSバージョン対策
+- (int)osMajorVersion
+{
+    return [[[[UIDevice currentDevice] systemVersion]
+             componentsSeparatedByString:@"."][0] intValue];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // ナビゲーションバーの色
+    UIColor* barTintColor = [UIColor colorWithRed:191/255.0 green:255/255.0 blue:207/255.0 alpha:1.0];
+    UIColor* barButtonTintColor = [UIColor whiteColor];
+    if ( [self osMajorVersion] >= 7 )
+    {
+        self.navigationController.navigationBar.barTintColor = barTintColor;
+        self.navigationController.navigationBar.tintColor = barButtonTintColor;
+    }
+    else
+    {
+        self.navigationController.navigationBar.tintColor = barTintColor;
+    }
+    
+    // ナビゲーションバーのタイトルの文字
+    self.navigationItem.title = @"SmartWalk";
+    // ナビゲーションバーのタイトルの色
+    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    self.navigationController.navigationBar.titleTextAttributes
+    = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     //userdefault
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     string = [defaults stringForKey:@"token"];
     NSLog(@"token = %@", string);
-    //
-
 
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"完了"
                                                     message:@"SmartWalkを起動しました。歩きスマホをご堪能ください！"
@@ -42,22 +71,6 @@ NSString* string;
     alert.delegate       = self;
     alert.alertViewStyle = UIAlertViewStyleDefault;
     [alert show];
-    
-    // ナビゲーションが埋もれるのをなおす
-    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-    //iOS 7.0以上の場合
-    if(iOSVersion <= 7.0) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
-    // ナビゲーションの高さ
-    
-    // ナビゲーションバーの色
-    self.navigationController.navigationBar.tintColor =
-    [UIColor colorWithRed:191/255.0 green:255/255.0 blue:207/255.0 alpha:1];
-    
-    // ナビゲーションバーのタイトル
-    self.navigationItem.title = @"SmartWalk";
-    
     
     //緯度経度
     lm = [[CLLocationManager alloc] init];
@@ -73,22 +86,10 @@ NSString* string;
     changeLabelCount = 0;
     
     // ▼アニメーション▼
-    /* 予備…
-    NSArray *imagesArray = [NSArray arrayWithObjects:
-                           [UIImage imageNamed:@"sw1.png"],
-                           [UIImage imageNamed:@"sw2.png"],
-                           [UIImage imageNamed:@"sw3.png"],
-                           [UIImage imageNamed:@"sw4.png"],
-                           nil];
-    */
-    //NSMutableArray *imagesArray = [NSMutableArray arrayWithObjects:nil];
     UIImage* imagesArray[18];
-    
-    // 配列に要素を挿入する
     for (int i = 0; i < 18; i++) {
         UIImage *source = [UIImage imageNamed:[NSString stringWithFormat:@"sw%d.png",i+1] ];
         imagesArray[i] = source;
-        //[imagesArray insertObject:source atIndex:i];
     }
     self.smartWalker.animationImages = [NSArray arrayWithObjects:imagesArray count:18];
     self.smartWalker.animationDuration = 0.5;
@@ -96,6 +97,7 @@ NSString* string;
     [self.smartWalker startAnimating];
     
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
