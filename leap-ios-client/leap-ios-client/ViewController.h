@@ -20,4 +20,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *smartWalker;
 
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+
 @end

@@ -55,6 +55,22 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    // 1秒ごとに更新処理を呼ぶ
+    [[NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(changeLabel) userInfo:nil repeats:YES] fire];
+}
+
+- (void)changeLabel
+{
+    int x;
+    x++;
+    if (x % 2 == 1) {
+        self.statusLabel.text = @"歩きスマホ中…";
+    } else {
+        self.statusLabel.text = @"歩きスマホ中　";
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
