@@ -40,6 +40,9 @@
                             </imageView>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="smartWalker" destination="Wgr-Pi-er0" id="dbh-NL-BxP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zh5-1d-68P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

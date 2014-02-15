@@ -41,7 +41,21 @@
     self.navigationItem.title = @"SmartWalk";
     
     
+    // ▼アニメーション▼
+    NSArray *imageArray = [NSArray arrayWithObjects:
+                           [UIImage imageNamed:@"sw1.png"],
+                           [UIImage imageNamed:@"sw2.png"],
+                           [UIImage imageNamed:@"sw3.png"],
+                           [UIImage imageNamed:@"sw4.png"],
+                           nil];
+    self.smartWalker.animationImages = imageArray;
+    self.smartWalker.animationDuration = 0.1;
+    self.smartWalker.animationRepeatCount = 0;
+    [self.smartWalker startAnimating];
+    
 }
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -114,6 +128,7 @@
     
     
 }
+
 
 
 - (IBAction)Play:(id)sender {

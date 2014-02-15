@@ -18,5 +18,6 @@
 @property (nonatomic, retain) AVPlayer *avPlayer;
 - (IBAction)Play:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIImageView *smartWalker;
 
 @end
