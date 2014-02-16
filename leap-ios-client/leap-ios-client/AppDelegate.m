@@ -108,7 +108,7 @@
         
         
         
-        NSString* url = @"http://192.168.151.134:9292/token";
+        NSString* url = @"http://smartwalk.hajipion.com/token";
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         // NSData *jsonData = [message dataUsingEncoding:NSUTF8StringEncoding];
@@ -135,7 +135,7 @@
             
             //2回目のリクエスト
             // 空のリストを生成する
-            NSURL   *url = [NSURL URLWithString:@"http://192.168.151.134:9292/register"];
+            NSURL   *url = [NSURL URLWithString:@"http://smartwalk.hajipion.com/register"];
             
             NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
             [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -150,6 +150,7 @@
             
             NSError *error = nil;
             NSData  *content = [NSJSONSerialization dataWithJSONObject:second_req options:NSJSONWritingPrettyPrinted error:&error];
+            [request setValue:[NSString stringWithFormat:@"%u",(unsigned int)content.length] forHTTPHeaderField:@"Content-Length"];
             [request setHTTPBody:content];
             NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
             
@@ -191,14 +192,6 @@
     }
     
     
-    NSString *path=[[NSBundle mainBundle]pathForResource:@"migi" ofType:@"mp4"];
-    NSURL *url2 =[NSURL fileURLWithPath:path];
-    
-    audio =[[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
-    audio.volume=1.0;
-    audio.numberOfLoops=1;
-    [audio prepareToPlay];
-    [audio play];
 
     
     NSLog(@"remote notification: %@",[userInfo description]);
@@ -209,6 +202,19 @@
     
     NSString *sound = [apsInfo objectForKey:@"sound"];
     NSLog(@"Received Push Sound: %@", sound);
+    if(sound!=nil){
+        NSString *path=[[NSBundle mainBundle]pathForResource:sound ofType:@"mp4"];
+        NSURL *url2 =[NSURL fileURLWithPath:path];
+        
+        audio =[[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
+        audio.volume=1.0;
+        audio.numberOfLoops=1;
+        [audio prepareToPlay];
+        [audio play];
+    }
+    
+    
+
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     
     NSString *badge = [apsInfo objectForKey:@"badge"];

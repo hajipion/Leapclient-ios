@@ -240,7 +240,7 @@ int flag=0;
 
     if(dic2){
         // 空のリストを生成する
-        NSURL   *url = [NSURL URLWithString:@"http://192.168.151.134:9292/location"];
+        NSURL   *url = [NSURL URLWithString:@"http://smartwalk.hajipion.com/location"];
         
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -256,6 +256,7 @@ int flag=0;
         NSError *error = nil;
         NSData  *content = [NSJSONSerialization dataWithJSONObject:person options:NSJSONWritingPrettyPrinted error:&error];
         [request setHTTPBody:content];
+        [request setValue:[NSString stringWithFormat:@"%u",(unsigned int)content.length] forHTTPHeaderField:@"Content-Length"];
         NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         
         
@@ -297,6 +298,7 @@ int flag=0;
         
     }else{
         exit(1);
+        
     }
    
     
