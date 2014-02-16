@@ -203,7 +203,8 @@
     NSString *sound = [apsInfo objectForKey:@"sound"];
     NSLog(@"Received Push Sound: %@", sound);
     if(sound!=nil){
-        NSString *path=[[NSBundle mainBundle]pathForResource:sound ofType:@"mp4"];
+        NSString *filename=[[sound lastPathComponent]stringByDeletingPathExtension];
+        NSString *path=[[NSBundle mainBundle]pathForResource:filename ofType:@"mp4"];
         NSURL *url2 =[NSURL fileURLWithPath:path];
         
         audio =[[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
