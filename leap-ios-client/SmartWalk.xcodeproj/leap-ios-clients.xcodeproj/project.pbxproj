@@ -56,7 +56,7 @@
 		474C30DDBF0443D4BF7515DC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B0483B81DEED424CA2DB8705 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1446D318AFC39A00BC2610 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
-		F615B73F18AF6A6B00F80131 /* leap-ios-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "leap-ios-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F615B73F18AF6A6B00F80131 /* leap-ios-clients.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "leap-ios-clients.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F615B74218AF6A6B00F80131 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F615B74418AF6A6B00F80131 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F615B74618AF6A6B00F80131 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -129,7 +129,7 @@
 		F615B74018AF6A6B00F80131 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F615B73F18AF6A6B00F80131 /* leap-ios-client.app */,
+				F615B73F18AF6A6B00F80131 /* leap-ios-clients.app */,
 				F615B76018AF6A6B00F80131 /* leap-ios-clientTests.xctest */,
 			);
 			name = Products;
@@ -219,7 +219,7 @@
 			);
 			name = "leap-ios-client";
 			productName = "leap-ios-client";
-			productReference = F615B73F18AF6A6B00F80131 /* leap-ios-client.app */;
+			productReference = F615B73F18AF6A6B00F80131 /* leap-ios-clients.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F615B75F18AF6A6B00F80131 /* leap-ios-clientTests */ = {
@@ -257,7 +257,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F615B73A18AF6A6B00F80131 /* Build configuration list for PBXProject "leap-ios-client" */;
+			buildConfigurationList = F615B73A18AF6A6B00F80131 /* Build configuration list for PBXProject "leap-ios-clients" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -490,7 +490,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "leap-ios-client/leap-ios-client-Prefix.pch";
 				INFOPLIST_FILE = "leap-ios-client/leap-ios-client-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "leap-ios-clients";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -507,7 +507,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "leap-ios-client/leap-ios-client-Prefix.pch";
 				INFOPLIST_FILE = "leap-ios-client/leap-ios-client-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "leap-ios-clients";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -558,7 +558,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F615B73A18AF6A6B00F80131 /* Build configuration list for PBXProject "leap-ios-client" */ = {
+		F615B73A18AF6A6B00F80131 /* Build configuration list for PBXProject "leap-ios-clients" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F615B76F18AF6A6B00F80131 /* Debug */,

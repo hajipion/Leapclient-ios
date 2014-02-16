@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94891748C97442E2839E0E51 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0483B81DEED424CA2DB8705 /* libPods.a */; };
+		EF1446D418AFC39A00BC2610 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = EF1446D318AFC39A00BC2610 /* stop.png */; };
+		EF1446D518AFC39A00BC2610 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = EF1446D318AFC39A00BC2610 /* stop.png */; };
+		F615B74318AF6A6B00F80131 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74218AF6A6B00F80131 /* Foundation.framework */; };
+		F615B74518AF6A6B00F80131 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74418AF6A6B00F80131 /* CoreGraphics.framework */; };
+		F615B74718AF6A6B00F80131 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74618AF6A6B00F80131 /* UIKit.framework */; };
+		F615B74D18AF6A6B00F80131 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F615B74B18AF6A6B00F80131 /* InfoPlist.strings */; };
+		F615B74F18AF6A6B00F80131 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F615B74E18AF6A6B00F80131 /* main.m */; };
+		F615B75318AF6A6B00F80131 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F615B75218AF6A6B00F80131 /* AppDelegate.m */; };
+		F615B75618AF6A6B00F80131 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F615B75418AF6A6B00F80131 /* Main.storyboard */; };
+		F615B75918AF6A6B00F80131 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F615B75818AF6A6B00F80131 /* ViewController.m */; };
+		F615B75B18AF6A6B00F80131 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F615B75A18AF6A6B00F80131 /* Images.xcassets */; };
+		F615B76218AF6A6B00F80131 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B76118AF6A6B00F80131 /* XCTest.framework */; };
+		F615B76318AF6A6B00F80131 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74218AF6A6B00F80131 /* Foundation.framework */; };
+		F615B76418AF6A6B00F80131 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F615B74618AF6A6B00F80131 /* UIKit.framework */; };
+		F615B76C18AF6A6B00F80131 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F615B76A18AF6A6B00F80131 /* InfoPlist.strings */; };
+		F615B76E18AF6A6B00F80131 /* leap_ios_clientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F615B76D18AF6A6B00F80131 /* leap_ios_clientTests.m */; };
+		F615B77818AF6ACC00F80131 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F615B77718AF6ACC00F80131 /* Podfile */; };
+		F6C1F2B318AF6D840018212D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C1F2B218AF6D840018212D /* AVFoundation.framework */; };
+		F6C1F2C618AF833E0018212D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F615B75A18AF6A6B00F80131 /* Images.xcassets */; };
+		F6C1F2CB18AF995C0018212D /* o-magne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2CA18AF995C0018212D /* o-magne.mp3 */; };
+		F6C1F2CC18AF995C0018212D /* o-magne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2CA18AF995C0018212D /* o-magne.mp3 */; };
+		F6C1F2D118AF9C9D0018212D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C1F2D018AF9C9D0018212D /* CoreLocation.framework */; };
+		F6C1F2D418AFB2FC0018212D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2D218AFB2FC0018212D /* background.png */; };
+		F6C1F2D518AFB2FC0018212D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2D218AFB2FC0018212D /* background.png */; };
+		F6C1F2D618AFB2FC0018212D /* SmartWalker in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2D318AFB2FC0018212D /* SmartWalker */; };
+		F6C1F2D718AFB2FC0018212D /* SmartWalker in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F2D318AFB2FC0018212D /* SmartWalker */; };
+		F6C1F31018AFEC8A0018212D /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F30F18AFEC8A0018212D /* StringUtils.m */; };
+		F6C1F31118AFEC8A0018212D /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F30F18AFEC8A0018212D /* StringUtils.m */; };
+		F6C1F31418AFF12C0018212D /* hidari.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F31218AFF12C0018212D /* hidari.mp4 */; };
+		F6C1F31518AFF12C0018212D /* hidari.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F31218AFF12C0018212D /* hidari.mp4 */; };
+		F6C1F31618AFF12C0018212D /* migi.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F31318AFF12C0018212D /* migi.mp4 */; };
+		F6C1F31718AFF12C0018212D /* migi.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F31318AFF12C0018212D /* migi.mp4 */; };
+		F6E30CE118B046D200E0A8D5 /* sw1.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CCF18B046D200E0A8D5 /* sw1.png */; };
+		F6E30CE218B046D200E0A8D5 /* sw1.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CCF18B046D200E0A8D5 /* sw1.png */; };
+		F6E30CE318B046D200E0A8D5 /* sw2.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD018B046D200E0A8D5 /* sw2.png */; };
+		F6E30CE418B046D200E0A8D5 /* sw2.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD018B046D200E0A8D5 /* sw2.png */; };
+		F6E30CE518B046D200E0A8D5 /* sw3.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD118B046D200E0A8D5 /* sw3.png */; };
+		F6E30CE618B046D200E0A8D5 /* sw3.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD118B046D200E0A8D5 /* sw3.png */; };
+		F6E30CE718B046D200E0A8D5 /* sw4.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD218B046D200E0A8D5 /* sw4.png */; };
+		F6E30CE818B046D200E0A8D5 /* sw4.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD218B046D200E0A8D5 /* sw4.png */; };
+		F6E30CE918B046D200E0A8D5 /* sw5.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD318B046D200E0A8D5 /* sw5.png */; };
+		F6E30CEA18B046D200E0A8D5 /* sw5.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD318B046D200E0A8D5 /* sw5.png */; };
+		F6E30CEB18B046D200E0A8D5 /* sw6.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD418B046D200E0A8D5 /* sw6.png */; };
+		F6E30CEC18B046D200E0A8D5 /* sw6.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD418B046D200E0A8D5 /* sw6.png */; };
+		F6E30CED18B046D200E0A8D5 /* sw7.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD518B046D200E0A8D5 /* sw7.png */; };
+		F6E30CEE18B046D200E0A8D5 /* sw7.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD518B046D200E0A8D5 /* sw7.png */; };
+		F6E30CEF18B046D200E0A8D5 /* sw8.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD618B046D200E0A8D5 /* sw8.png */; };
+		F6E30CF018B046D200E0A8D5 /* sw8.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD618B046D200E0A8D5 /* sw8.png */; };
+		F6E30CF118B046D200E0A8D5 /* sw9.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD718B046D200E0A8D5 /* sw9.png */; };
+		F6E30CF218B046D200E0A8D5 /* sw9.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD718B046D200E0A8D5 /* sw9.png */; };
+		F6E30CF318B046D200E0A8D5 /* sw10.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD818B046D200E0A8D5 /* sw10.png */; };
+		F6E30CF418B046D200E0A8D5 /* sw10.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD818B046D200E0A8D5 /* sw10.png */; };
+		F6E30CF518B046D200E0A8D5 /* sw11.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD918B046D200E0A8D5 /* sw11.png */; };
+		F6E30CF618B046D200E0A8D5 /* sw11.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CD918B046D200E0A8D5 /* sw11.png */; };
+		F6E30CF718B046D200E0A8D5 /* sw12.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDA18B046D200E0A8D5 /* sw12.png */; };
+		F6E30CF818B046D200E0A8D5 /* sw12.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDA18B046D200E0A8D5 /* sw12.png */; };
+		F6E30CF918B046D200E0A8D5 /* sw13.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDB18B046D200E0A8D5 /* sw13.png */; };
+		F6E30CFA18B046D200E0A8D5 /* sw13.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDB18B046D200E0A8D5 /* sw13.png */; };
+		F6E30CFB18B046D200E0A8D5 /* sw14.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDC18B046D200E0A8D5 /* sw14.png */; };
+		F6E30CFC18B046D200E0A8D5 /* sw14.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDC18B046D200E0A8D5 /* sw14.png */; };
+		F6E30CFD18B046D200E0A8D5 /* sw15.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDD18B046D200E0A8D5 /* sw15.png */; };
+		F6E30CFE18B046D200E0A8D5 /* sw15.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDD18B046D200E0A8D5 /* sw15.png */; };
+		F6E30CFF18B046D200E0A8D5 /* sw16.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDE18B046D200E0A8D5 /* sw16.png */; };
+		F6E30D0018B046D200E0A8D5 /* sw16.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDE18B046D200E0A8D5 /* sw16.png */; };
+		F6E30D0118B046D200E0A8D5 /* sw17.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDF18B046D200E0A8D5 /* sw17.png */; };
+		F6E30D0218B046D200E0A8D5 /* sw17.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CDF18B046D200E0A8D5 /* sw17.png */; };
+		F6E30D0318B046D200E0A8D5 /* sw18.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CE018B046D200E0A8D5 /* sw18.png */; };
+		F6E30D0418B046D200E0A8D5 /* sw18.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E30CE018B046D200E0A8D5 /* sw18.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F615B76518AF6A6B00F80131 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F615B73718AF6A6B00F80131 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F615B73E18AF6A6B00F80131;
+			remoteInfo = "leap-ios-client";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		474C30DDBF0443D4BF7515DC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		B0483B81DEED424CA2DB8705 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF1446D318AFC39A00BC2610 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		F615B73F18AF6A6B00F80131 /* SmartWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F615B74218AF6A6B00F80131 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F615B74418AF6A6B00F80131 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F615B74618AF6A6B00F80131 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F615B74A18AF6A6B00F80131 /* SmartWalk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmartWalk-Info.plist"; sourceTree = "<group>"; };
+		F615B74C18AF6A6B00F80131 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F615B74E18AF6A6B00F80131 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F615B75018AF6A6B00F80131 /* SmartWalk-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartWalk-Prefix.pch"; sourceTree = "<group>"; };
+		F615B75118AF6A6B00F80131 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F615B75218AF6A6B00F80131 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F615B75518AF6A6B00F80131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F615B75718AF6A6B00F80131 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F615B75818AF6A6B00F80131 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F615B75A18AF6A6B00F80131 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F615B76018AF6A6B00F80131 /* SmartWalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartWalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F615B76118AF6A6B00F80131 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F615B76918AF6A6B00F80131 /* SmartWalkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmartWalkTests-Info.plist"; sourceTree = "<group>"; };
+		F615B76B18AF6A6B00F80131 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F615B76D18AF6A6B00F80131 /* leap_ios_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = leap_ios_clientTests.m; sourceTree = "<group>"; };
+		F615B77718AF6ACC00F80131 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F6C1F2B218AF6D840018212D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F6C1F2CA18AF995C0018212D /* o-magne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "o-magne.mp3"; sourceTree = SOURCE_ROOT; };
+		F6C1F2D018AF9C9D0018212D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F6C1F2D218AFB2FC0018212D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		F6C1F2D318AFB2FC0018212D /* SmartWalker */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SmartWalker; sourceTree = "<group>"; };
+		F6C1F30E18AFEC8A0018212D /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtils.h; sourceTree = "<group>"; };
+		F6C1F30F18AFEC8A0018212D /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
+		F6C1F31218AFF12C0018212D /* hidari.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hidari.mp4; sourceTree = "<group>"; };
+		F6C1F31318AFF12C0018212D /* migi.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = migi.mp4; sourceTree = "<group>"; };
+		F6E30CCF18B046D200E0A8D5 /* sw1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw1.png; path = SmartWalker/sw1.png; sourceTree = "<group>"; };
+		F6E30CD018B046D200E0A8D5 /* sw2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw2.png; path = SmartWalker/sw2.png; sourceTree = "<group>"; };
+		F6E30CD118B046D200E0A8D5 /* sw3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw3.png; path = SmartWalker/sw3.png; sourceTree = "<group>"; };
+		F6E30CD218B046D200E0A8D5 /* sw4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw4.png; path = SmartWalker/sw4.png; sourceTree = "<group>"; };
+		F6E30CD318B046D200E0A8D5 /* sw5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw5.png; path = SmartWalker/sw5.png; sourceTree = "<group>"; };
+		F6E30CD418B046D200E0A8D5 /* sw6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw6.png; path = SmartWalker/sw6.png; sourceTree = "<group>"; };
+		F6E30CD518B046D200E0A8D5 /* sw7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw7.png; path = SmartWalker/sw7.png; sourceTree = "<group>"; };
+		F6E30CD618B046D200E0A8D5 /* sw8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw8.png; path = SmartWalker/sw8.png; sourceTree = "<group>"; };
+		F6E30CD718B046D200E0A8D5 /* sw9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw9.png; path = SmartWalker/sw9.png; sourceTree = "<group>"; };
+		F6E30CD818B046D200E0A8D5 /* sw10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw10.png; path = SmartWalker/sw10.png; sourceTree = "<group>"; };
+		F6E30CD918B046D200E0A8D5 /* sw11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw11.png; path = SmartWalker/sw11.png; sourceTree = "<group>"; };
+		F6E30CDA18B046D200E0A8D5 /* sw12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw12.png; path = SmartWalker/sw12.png; sourceTree = "<group>"; };
+		F6E30CDB18B046D200E0A8D5 /* sw13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw13.png; path = SmartWalker/sw13.png; sourceTree = "<group>"; };
+		F6E30CDC18B046D200E0A8D5 /* sw14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw14.png; path = SmartWalker/sw14.png; sourceTree = "<group>"; };
+		F6E30CDD18B046D200E0A8D5 /* sw15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw15.png; path = SmartWalker/sw15.png; sourceTree = "<group>"; };
+		F6E30CDE18B046D200E0A8D5 /* sw16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw16.png; path = SmartWalker/sw16.png; sourceTree = "<group>"; };
+		F6E30CDF18B046D200E0A8D5 /* sw17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw17.png; path = SmartWalker/sw17.png; sourceTree = "<group>"; };
+		F6E30CE018B046D200E0A8D5 /* sw18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sw18.png; path = SmartWalker/sw18.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F615B73C18AF6A6B00F80131 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6C1F2D118AF9C9D0018212D /* CoreLocation.framework in Frameworks */,
+				F6C1F2B318AF6D840018212D /* AVFoundation.framework in Frameworks */,
+				F615B74518AF6A6B00F80131 /* CoreGraphics.framework in Frameworks */,
+				F615B74718AF6A6B00F80131 /* UIKit.framework in Frameworks */,
+				F615B74318AF6A6B00F80131 /* Foundation.framework in Frameworks */,
+				94891748C97442E2839E0E51 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F615B75D18AF6A6B00F80131 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F615B76218AF6A6B00F80131 /* XCTest.framework in Frameworks */,
+				F615B76418AF6A6B00F80131 /* UIKit.framework in Frameworks */,
+				F615B76318AF6A6B00F80131 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F615B73618AF6A6B00F80131 = {
+			isa = PBXGroup;
+			children = (
+				F615B77718AF6ACC00F80131 /* Podfile */,
+				F615B74818AF6A6B00F80131 /* leap-ios-client */,
+				F615B76718AF6A6B00F80131 /* leap-ios-clientTests */,
+				F615B74118AF6A6B00F80131 /* Frameworks */,
+				F615B74018AF6A6B00F80131 /* Products */,
+				474C30DDBF0443D4BF7515DC /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		F615B74018AF6A6B00F80131 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F615B73F18AF6A6B00F80131 /* SmartWalk.app */,
+				F615B76018AF6A6B00F80131 /* SmartWalkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F615B74118AF6A6B00F80131 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F2D018AF9C9D0018212D /* CoreLocation.framework */,
+				F6C1F2B218AF6D840018212D /* AVFoundation.framework */,
+				F615B74218AF6A6B00F80131 /* Foundation.framework */,
+				F615B74418AF6A6B00F80131 /* CoreGraphics.framework */,
+				F615B74618AF6A6B00F80131 /* UIKit.framework */,
+				F615B76118AF6A6B00F80131 /* XCTest.framework */,
+				B0483B81DEED424CA2DB8705 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F615B74818AF6A6B00F80131 /* leap-ios-client */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F30E18AFEC8A0018212D /* StringUtils.h */,
+				F6C1F30F18AFEC8A0018212D /* StringUtils.m */,
+				F615B75118AF6A6B00F80131 /* AppDelegate.h */,
+				F615B75218AF6A6B00F80131 /* AppDelegate.m */,
+				F615B75418AF6A6B00F80131 /* Main.storyboard */,
+				F615B75718AF6A6B00F80131 /* ViewController.h */,
+				F615B75818AF6A6B00F80131 /* ViewController.m */,
+				F615B75A18AF6A6B00F80131 /* Images.xcassets */,
+				F615B74918AF6A6B00F80131 /* Supporting Files */,
+			);
+			path = "leap-ios-client";
+			sourceTree = "<group>";
+		};
+		F615B74918AF6A6B00F80131 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F31218AFF12C0018212D /* hidari.mp4 */,
+				F6C1F31318AFF12C0018212D /* migi.mp4 */,
+				F6C1F2D218AFB2FC0018212D /* background.png */,
+				F6E30CCF18B046D200E0A8D5 /* sw1.png */,
+				F6E30CD018B046D200E0A8D5 /* sw2.png */,
+				F6E30CD118B046D200E0A8D5 /* sw3.png */,
+				F6E30CD218B046D200E0A8D5 /* sw4.png */,
+				F6E30CD318B046D200E0A8D5 /* sw5.png */,
+				F6E30CD418B046D200E0A8D5 /* sw6.png */,
+				F6E30CD518B046D200E0A8D5 /* sw7.png */,
+				F6E30CD618B046D200E0A8D5 /* sw8.png */,
+				F6E30CD718B046D200E0A8D5 /* sw9.png */,
+				F6E30CD818B046D200E0A8D5 /* sw10.png */,
+				F6E30CD918B046D200E0A8D5 /* sw11.png */,
+				F6E30CDA18B046D200E0A8D5 /* sw12.png */,
+				F6E30CDB18B046D200E0A8D5 /* sw13.png */,
+				F6E30CDC18B046D200E0A8D5 /* sw14.png */,
+				F6E30CDD18B046D200E0A8D5 /* sw15.png */,
+				F6E30CDE18B046D200E0A8D5 /* sw16.png */,
+				F6E30CDF18B046D200E0A8D5 /* sw17.png */,
+				F6E30CE018B046D200E0A8D5 /* sw18.png */,
+				F6C1F2D318AFB2FC0018212D /* SmartWalker */,
+				F6C1F2CA18AF995C0018212D /* o-magne.mp3 */,
+				EF1446D318AFC39A00BC2610 /* stop.png */,
+				F615B74A18AF6A6B00F80131 /* SmartWalk-Info.plist */,
+				F615B74B18AF6A6B00F80131 /* InfoPlist.strings */,
+				F615B74E18AF6A6B00F80131 /* main.m */,
+				F615B75018AF6A6B00F80131 /* SmartWalk-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F615B76718AF6A6B00F80131 /* leap-ios-clientTests */ = {
+			isa = PBXGroup;
+			children = (
+				F615B76D18AF6A6B00F80131 /* leap_ios_clientTests.m */,
+				F615B76818AF6A6B00F80131 /* Supporting Files */,
+			);
+			path = "leap-ios-clientTests";
+			sourceTree = "<group>";
+		};
+		F615B76818AF6A6B00F80131 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F615B76918AF6A6B00F80131 /* SmartWalkTests-Info.plist */,
+				F615B76A18AF6A6B00F80131 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F615B73E18AF6A6B00F80131 /* SmartWalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F615B77118AF6A6B00F80131 /* Build configuration list for PBXNativeTarget "SmartWalk" */;
+			buildPhases = (
+				275BC30585024C9FBB6A9859 /* Check Pods Manifest.lock */,
+				F615B73B18AF6A6B00F80131 /* Sources */,
+				F615B73C18AF6A6B00F80131 /* Frameworks */,
+				F615B73D18AF6A6B00F80131 /* Resources */,
+				B6FD5C29B62C488EB380D5BC /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartWalk;
+			productName = "leap-ios-client";
+			productReference = F615B73F18AF6A6B00F80131 /* SmartWalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F615B75F18AF6A6B00F80131 /* SmartWalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F615B77418AF6A6B00F80131 /* Build configuration list for PBXNativeTarget "SmartWalkTests" */;
+			buildPhases = (
+				F615B75C18AF6A6B00F80131 /* Sources */,
+				F615B75D18AF6A6B00F80131 /* Frameworks */,
+				F615B75E18AF6A6B00F80131 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F615B76618AF6A6B00F80131 /* PBXTargetDependency */,
+			);
+			name = SmartWalkTests;
+			productName = "leap-ios-clientTests";
+			productReference = F615B76018AF6A6B00F80131 /* SmartWalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F615B73718AF6A6B00F80131 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = mariin;
+				TargetAttributes = {
+					F615B73E18AF6A6B00F80131 = {
+						DevelopmentTeam = X887YBT2HA;
+					};
+					F615B75F18AF6A6B00F80131 = {
+						TestTargetID = F615B73E18AF6A6B00F80131;
+					};
+				};
+			};
+			buildConfigurationList = F615B73A18AF6A6B00F80131 /* Build configuration list for PBXProject "SmartWalk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F615B73618AF6A6B00F80131;
+			productRefGroup = F615B74018AF6A6B00F80131 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F615B73E18AF6A6B00F80131 /* SmartWalk */,
+				F615B75F18AF6A6B00F80131 /* SmartWalkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F615B73D18AF6A6B00F80131 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6E30CEF18B046D200E0A8D5 /* sw8.png in Resources */,
+				F6E30CE918B046D200E0A8D5 /* sw5.png in Resources */,
+				F6E30D0118B046D200E0A8D5 /* sw17.png in Resources */,
+				F6E30CFB18B046D200E0A8D5 /* sw14.png in Resources */,
+				F6E30CE718B046D200E0A8D5 /* sw4.png in Resources */,
+				F6E30CF118B046D200E0A8D5 /* sw9.png in Resources */,
+				F6E30CE518B046D200E0A8D5 /* sw3.png in Resources */,
+				F6E30CED18B046D200E0A8D5 /* sw7.png in Resources */,
+				F6E30CF318B046D200E0A8D5 /* sw10.png in Resources */,
+				EF1446D418AFC39A00BC2610 /* stop.png in Resources */,
+				F6E30CF518B046D200E0A8D5 /* sw11.png in Resources */,
+				F6C1F2D418AFB2FC0018212D /* background.png in Resources */,
+				F6E30CFD18B046D200E0A8D5 /* sw15.png in Resources */,
+				F615B75B18AF6A6B00F80131 /* Images.xcassets in Resources */,
+				F6E30CF918B046D200E0A8D5 /* sw13.png in Resources */,
+				F6C1F31618AFF12C0018212D /* migi.mp4 in Resources */,
+				F6C1F31418AFF12C0018212D /* hidari.mp4 in Resources */,
+				F6E30CE118B046D200E0A8D5 /* sw1.png in Resources */,
+				F6E30CE318B046D200E0A8D5 /* sw2.png in Resources */,
+				F6E30CFF18B046D200E0A8D5 /* sw16.png in Resources */,
+				F6E30CEB18B046D200E0A8D5 /* sw6.png in Resources */,
+				F6E30CF718B046D200E0A8D5 /* sw12.png in Resources */,
+				F6E30D0318B046D200E0A8D5 /* sw18.png in Resources */,
+				F615B74D18AF6A6B00F80131 /* InfoPlist.strings in Resources */,
+				F615B77818AF6ACC00F80131 /* Podfile in Resources */,
+				F6C1F2CB18AF995C0018212D /* o-magne.mp3 in Resources */,
+				F6C1F2D618AFB2FC0018212D /* SmartWalker in Resources */,
+				F615B75618AF6A6B00F80131 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F615B75E18AF6A6B00F80131 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6E30CF218B046D200E0A8D5 /* sw9.png in Resources */,
+				F6E30CE818B046D200E0A8D5 /* sw4.png in Resources */,
+				F6E30D0418B046D200E0A8D5 /* sw18.png in Resources */,
+				F6E30CFA18B046D200E0A8D5 /* sw13.png in Resources */,
+				F6E30CF418B046D200E0A8D5 /* sw10.png in Resources */,
+				F6C1F2C618AF833E0018212D /* Images.xcassets in Resources */,
+				EF1446D518AFC39A00BC2610 /* stop.png in Resources */,
+				F6E30D0218B046D200E0A8D5 /* sw17.png in Resources */,
+				F6E30CEE18B046D200E0A8D5 /* sw7.png in Resources */,
+				F6C1F2D518AFB2FC0018212D /* background.png in Resources */,
+				F6E30CFE18B046D200E0A8D5 /* sw15.png in Resources */,
+				F6E30CFC18B046D200E0A8D5 /* sw14.png in Resources */,
+				F615B76C18AF6A6B00F80131 /* InfoPlist.strings in Resources */,
+				F6C1F2CC18AF995C0018212D /* o-magne.mp3 in Resources */,
+				F6C1F31718AFF12C0018212D /* migi.mp4 in Resources */,
+				F6E30CEA18B046D200E0A8D5 /* sw5.png in Resources */,
+				F6E30CE218B046D200E0A8D5 /* sw1.png in Resources */,
+				F6E30CF618B046D200E0A8D5 /* sw11.png in Resources */,
+				F6C1F2D718AFB2FC0018212D /* SmartWalker in Resources */,
+				F6E30CE418B046D200E0A8D5 /* sw2.png in Resources */,
+				F6E30CF018B046D200E0A8D5 /* sw8.png in Resources */,
+				F6E30CF818B046D200E0A8D5 /* sw12.png in Resources */,
+				F6E30D0018B046D200E0A8D5 /* sw16.png in Resources */,
+				F6E30CE618B046D200E0A8D5 /* sw3.png in Resources */,
+				F6E30CEC18B046D200E0A8D5 /* sw6.png in Resources */,
+				F6C1F31518AFF12C0018212D /* hidari.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		275BC30585024C9FBB6A9859 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B6FD5C29B62C488EB380D5BC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F615B73B18AF6A6B00F80131 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6C1F31018AFEC8A0018212D /* StringUtils.m in Sources */,
+				F615B75918AF6A6B00F80131 /* ViewController.m in Sources */,
+				F615B75318AF6A6B00F80131 /* AppDelegate.m in Sources */,
+				F615B74F18AF6A6B00F80131 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F615B75C18AF6A6B00F80131 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6C1F31118AFEC8A0018212D /* StringUtils.m in Sources */,
+				F615B76E18AF6A6B00F80131 /* leap_ios_clientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F615B76618AF6A6B00F80131 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F615B73E18AF6A6B00F80131 /* SmartWalk */;
+			targetProxy = F615B76518AF6A6B00F80131 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F615B74B18AF6A6B00F80131 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F615B74C18AF6A6B00F80131 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F615B75418AF6A6B00F80131 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F615B75518AF6A6B00F80131 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F615B76A18AF6A6B00F80131 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F615B76B18AF6A6B00F80131 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F615B76F18AF6A6B00F80131 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 陽子 市岡 (88Q583VZ3Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 陽子 市岡 (88Q583VZ3Q)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "022DDF4C-7A63-4994-93D1-A4C974954C17";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F615B77018AF6A6B00F80131 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 陽子 市岡 (88Q583VZ3Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 陽子 市岡 (88Q583VZ3Q)";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "022DDF4C-7A63-4994-93D1-A4C974954C17";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F615B77218AF6A6B00F80131 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 474C30DDBF0443D4BF7515DC /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "leap-ios-client/SmartWalk-Prefix.pch";
+				INFOPLIST_FILE = "leap-ios-client/SmartWalk-Info.plist";
+				PRODUCT_NAME = SmartWalk;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F615B77318AF6A6B00F80131 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 474C30DDBF0443D4BF7515DC /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "leap-ios-client/SmartWalk-Prefix.pch";
+				INFOPLIST_FILE = "leap-ios-client/SmartWalk-Info.plist";
+				PRODUCT_NAME = SmartWalk;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F615B77518AF6A6B00F80131 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/leap-ios-client.app/leap-ios-client";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "leap-ios-client/leap-ios-client-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "leap-ios-clientTests/SmartWalkTests-Info.plist";
+				PRODUCT_NAME = SmartWalkTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F615B77618AF6A6B00F80131 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/leap-ios-client.app/leap-ios-client";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "leap-ios-client/leap-ios-client-Prefix.pch";
+				INFOPLIST_FILE = "leap-ios-clientTests/SmartWalkTests-Info.plist";
+				PRODUCT_NAME = SmartWalkTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F615B73A18AF6A6B00F80131 /* Build configuration list for PBXProject "SmartWalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F615B76F18AF6A6B00F80131 /* Debug */,
+				F615B77018AF6A6B00F80131 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F615B77118AF6A6B00F80131 /* Build configuration list for PBXNativeTarget "SmartWalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F615B77218AF6A6B00F80131 /* Debug */,
+				F615B77318AF6A6B00F80131 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F615B77418AF6A6B00F80131 /* Build configuration list for PBXNativeTarget "SmartWalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F615B77518AF6A6B00F80131 /* Debug */,
+				F615B77618AF6A6B00F80131 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F615B73718AF6A6B00F80131 /* Project object */;
+}
